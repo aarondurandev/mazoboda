@@ -240,7 +240,6 @@ document.querySelectorAll(".button").forEach(button => {
 // Detectar orientación
 window.matchMedia("(orientation: landscape)").addEventListener("change", e => {
     const landscape = e.matches;
-    // TODO: modificar hero para landscape
     if (landscape) {
 
     } else {
