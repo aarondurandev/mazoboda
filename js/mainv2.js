@@ -145,7 +145,7 @@ function moveTimerToHero() {
         }
     }
 }
-moveTimerToHero();
+//moveTimerToHero();
 
 // Lightbox
 let currentIndex = 0;

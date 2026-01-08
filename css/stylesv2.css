@@ -41,7 +41,8 @@
 /* VARIABLES GLOBALES */
 /* ==================== */
 :root {
-    --color-fondo: #FFF;
+    /* --color-fondo: #FFF; */
+    --color-fondo: #FFFFFD;
     --color-texto: #333;
     --color-primario: #d36c6c;
     --color-menu: #f8f8f8;
@@ -130,6 +131,9 @@ button:hover {
     background-repeat: no-repeat;
     background-position: center center;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
 
 /*.hero-wrapper {
@@ -235,6 +239,7 @@ section p {
 #temporizador {
     font-family: 'Futura';
     font-size: 2.2rem !important;
+
 }
 
 /* ==================== */
@@ -468,17 +473,18 @@ footer {
         flex-direction: column;
         height: auto;
     }
-
-    #hero {
+    /* TODO: revisar esto */
+    
+    /*#hero {
         position: relative;
         height: 100svh;
         z-index: 1;
-    }
+    }*/
 
-    .hero-wrapper {
+    /*.hero-wrapper {
         font-size: 2rem;
         padding-bottom: 60px;
-    }
+    }*/
 
     .hero-timer {
         margin-top: 1.5rem;
@@ -550,7 +556,8 @@ footer {
     }
 
     #temporizador {
-        margin-top: 1rem;
+        /* margin-top: 1rem; */
+        margin-bottom: 6rem;
         font-size: 1rem !important;
         /* font-family: 'RougeScript'; */
     }
