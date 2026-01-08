@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bodorrio</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.7.1/dist/css/glide.core.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.7.1/dist/glide.min.js"></script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    <script src="./js/aos.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+</head>
+
+<body>
+    <header>
+        <div class="nav-wrapper">
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <nav id="navMenu">
+                <a href="#inicio">INICIO</a>
+                <a href="#nosotros">NOSOTROS</a>
+                <a href="#detallesBoda">INFORMACIÓN</a>
+                <a href="#rsvp">RSVP</a>
+            </nav>
+        </div>
+    </header>
+    <!-- <div class="spacer"></div> -->
+    <!-- Inicio -->
+    <section id="inicio">
+        <div class="blur-overlay" data-aos="fadeIn">
+            <h1>Manuel y Zoe</h1>
+            <p class="bordes">8 agosto 2026</p>
+            <p class="temporizador"></p>
+
+        </div>
+    </section>
+    <div id="wrapper">
+
+        <!-- Nosotros -->
+        <section id="nosotros">
+            <div class="glide story-carousel" data-aos="fadeIn">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <img src="./assets/img/IMG-20230513-WA0008.webp" alt="First Meeting">
+                            <div class="caption">
+                                <h3>OIA OIA</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus enim vitae
+                                    arcu
+                                    accumsan faucibus. Suspendisse malesuada magna turpis, sed ultricies metus mattis
+                                    vitae.
+                                    Integer posuere mollis placerat. Quisque at rhoncus sem. Pellentesque scelerisque
+                                    dui
+                                    non maximus feugiat. In id dapibus nibh.</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <img src="./assets/img/IMG20240813131427 - copia.webp" alt="First Trip">
+                            <div class="caption">
+                                <h3>OIA OIA</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus enim vitae
+                                    arcu
+                                    accumsan faucibus. Suspendisse malesuada magna turpis, sed ultricies metus
+                                    mattis
+                                    vitae.
+                                    Integer posuere mollis placerat. Quisque at rhoncus sem.</p>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <img src="./assets/img/61920405_345499372815890_6266878267100520457_n - copia.jpg"
+                                alt="The Proposal">
+                            <div class="caption">
+                                <h3>OIA OIA</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus enim vitae
+                                    arcu
+                                    accumsan faucibus.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">‹</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">›</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Foto -->
+    <!-- <div class="bloque-foto" style="background-image: url('./assets/img/stock/pexels-photo-5911310.webp');"></div> -->
+    <!-- Horario -->
+    <!--<section id="horario">
+            <div class="blur-overlay">
+                <h1>Horario</h1>
+                <p>Ceremonia: 12:00</p>
+                <p>Recepción: 12:45</p>
+                <p>Banquete: 13:30</p>
+            </div>
+        </section>-->
+    <section id="detallesBoda" class="info-section">
+        <div class="info-wrapper">
+            <div class="info-nav">
+                <button class="tab-link active" data-tab="ceremonia">Ceremonia</button>
+                <button class="tab-link" data-tab="musica">Música</button>
+                <button class="tab-link" data-tab="horario">Horario</button>
+                <button class="tab-link" data-tab="ubicacion">Ubicación</button>
+                <button class="tab-link" data-tab="vestimenta">Dress Code</button>
+                <button class="tab-link" data-tab="info">Info útil</button>
+            </div>
+
+            <div class="tab-panels">
+                <div class="tab-panel active" id="ceremonia">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit egestas neque non vehicula. Maecenas vel orci finibus, blandit massa.</p>
+                </div>
+                <div class="tab-panel" id="musica">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in quam id turpis sagittis aliquam. Duis aliquet neque non purus tempor, vitae convallis orci malesuada. Etiam suscipit augue sit amet ullamcorper rutrum. Nullam gravida sem vel dui posuere, nec sollicitudin enim condimentum. Cras at metus mauris. Morbi cursus, sapien sit amet fringilla venenatis, velit lorem tempor purus, quis tincidunt ex sem in metus.</p>
+                </div>
+                <div class="tab-panel" id="horario">
+                    <p>La ceremonia empieza a las 19:00. Cena a las 21:00. Fiesta desde las 23:00 🕖</p>
+                </div>
+                <div class="tab-panel" id="ubicacion">
+                    <p><a href="https://www.google.com/maps/place/Serman,+Pontevedra">El Jardín de los Helechos</a></p>
+                    <p>Serman, 36378, Pontevedra</p>
+                    <p>Tel: 664 63 75 66</p>
+                </div>
+                <div class="tab-panel" id="vestimenta">
+                    <p>Elegante y natural. Recomendamos tonos tierra, lino, tejidos frescos. Evitad el blanco y tacones
+                        finos (suelo irregular).</p>
+                </div>
+                <div class="tab-panel" id="info">
+                    <p>Habrá autobuses desde el centro de Vigo y aparcamiento gratuito. Si tienes alergias alimentarias,
+                        háznoslo saber en el RSVP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Foto -->
+    <!-- <div class="bloque-foto" style="background-image: url('./assets/img/stock/pexels-photo-1927259.webp');"></div> -->
+    <!-- Ubicación -->
+    <!-- <section id="ubicacion">
+            <div class="blur-overlay" data-aos="fade-down">
+                <h1>Ubicación</h1>
+                <p><a
+                        href="https://www.google.com/maps?client=firefox-b-d&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KZWKjhwFjSUNMaPx4aQhti-L&daddr=Serman,+36378,+Pontevedra">El
+                        Jardín de los Helechos</a></p>
+                <p>Serman, 36378, Pontevedra</p>
+                <p>664 63 75 66</p>
+                <button class="btn-elegant ">Ver en Mapa</button>
+
+            </div>
+        </section> -->
+    <!--         <section id="albumFotos">
+            <h2 class="section-title">Álbum de fotos 📷</h2>
+            <div class="gallery-grid">
+                <img src="./assets/img/11024427_618890061575144_1570853643_n.jpg" alt="Boda 1" class="gallery-item" />
+                <img src="./assets/img/11374308_1646341312317193_1512641725_n.jpg" alt="Boda 2" class="gallery-item" />
+                <img src="./assets/img/329815121_2126788741043370_4220475280219544592_n.jpg" alt="Boda 3"
+                    class="gallery-item" />
+                <img src="./assets/img/11374308_1646341312317193_1512641725_n.jpg" alt="Boda 2" class="gallery-item" />
+
+                <img src="./assets/img/11024427_618890061575144_1570853643_n.jpg" alt="Boda 1" class="gallery-item" />
+
+                <img src="./assets/img/329815121_2126788741043370_4220475280219544592_n.jpg" alt="Boda 3"
+                    class="gallery-item" />
+                <img src="./assets/img/329815121_2126788741043370_4220475280219544592_n.jpg" alt="Boda 3"
+                    class="gallery-item" />
+                <img src="./assets/img/11374308_1646341312317193_1512641725_n.jpg" alt="Boda 2" class="gallery-item" />
+                <img src="./assets/img/11024427_618890061575144_1570853643_n.jpg" alt="Boda 1" class="gallery-item" />
+
+            </div>
+
+        <div id="modal" class="modal hidden">
+            <span class="modal-close">&times;</span>
+            <img class="modal-img" id="modal-img" src="" alt="Imagen ampliada" />
+        </div>
+        </section> -->
+   <!--  <div id="wrapper">
+        <section id="rsvp">
+            <div class="blur-overlay">
+                <h1>RSVP</h1>
+                <p></p>
+            </div>
+        </section>
+    </div> -->
+
+    <footer>
+        &copy; 2025 Lizul y Zoe | Hecho con ❤️ por <a href="https://github.com/aaronduranwebdev">Aarón</a>
+    </footer>
+    <div id="scrollTopBtn"><img src="./assets/img/scrollTop.png" width="48px" height="48px"></div>
+
+    <script src="./js/main.js"></script>
+    <script>
+        AOS.init();
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 1,
+            focusAt: 'center'
+        }).mount();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bodorrio</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.7.1/dist/css/glide.core.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.7.1/dist/glide.min.js"></script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    <script src="./js/aos.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+</head>
+
+<body>
+    <header>
+        <div class="nav-wrapper">
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <nav id="navMenu">
+                <a href="#inicio">INICIO</a>
+                <a href="#nosotros">NOSOTROS</a>
+                <a href="#horario">HORARIO</a>
+                <a href="#ubicacion">UBICACIÓN</a>
+                <a href="#rsvp">RSVP</a>
+            </nav>
+        </div>
+    </header>
+    <!-- <div class="spacer"></div> -->
+    <div id="wrapper">
+        <!-- Inicio -->
+        <section id="inicio">
+            <div class="blur-overlay" data-aos="fadeIn">
+                <h1>Manuel y Zoe</h1>
+                <p class="bordes">8 agosto 2026</p>
+                <p id="temporizador"></p>
+
+            </div>
+        </section>
+        <!-- Nosotros -->
+        <section id="nosotros">
+            <div class="glide story-carousel" data-aos="fadeIn">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <img src="./assets/img/IMG-20230513-WA0008.webp" alt="First Meeting">
+                            <div class="caption">
+                                <h3>OIA OIA</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus enim vitae
+                                    arcu
+                                    accumsan faucibus. Suspendisse malesuada magna turpis, sed ultricies metus mattis
+                                    vitae.
+                                    Integer posuere mollis placerat. Quisque at rhoncus sem. Pellentesque scelerisque
+                                    dui
+                                    non maximus feugiat. In id dapibus nibh.</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <img src="./assets/img/IMG20240813131427 - copia.webp" alt="First Trip">
+                            <div class="caption">
+                                <h3>OIA OIA</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus enim vitae
+                                    arcu
+                                    accumsan faucibus. Suspendisse malesuada magna turpis, sed ultricies metus mattis
+                                    vitae.
+                                    Integer posuere mollis placerat. Quisque at rhoncus sem.</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <img src="./assets/img/61920405_345499372815890_6266878267100520457_n - copia.jpg"
+                                alt="The Proposal">
+                            <div class="caption">
+                                <h3>OIA OIA</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus enim vitae
+                                    arcu
+                                    accumsan faucibus.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">‹</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">›</button>
+                </div>
+            </div>
+        </section>
+        <!-- Foto -->
+        <div class="bloque-foto" style="background-image: url('./assets/img/stock/pexels-photo-5911310.webp');"></div>
+        <!-- Horario -->
+        <section id="horario">
+            <div class="blur-overlay">
+                <h1>Horario</h1>
+                <p>Ceremonia: 12:00</p>
+                <p>Recepción: 12:45</p>
+                <p>Banquete: 13:30</p>
+            </div>
+        </section>
+        <!-- Foto -->
+        <div class="bloque-foto" style="background-image: url('./assets/img/stock/pexels-photo-1927259.webp');"></div>
+        <!-- Ubicación -->
+        <section id="ubicacion">
+            <div class="blur-overlay" data-aos="zoomIn">
+                <h1>Ubicación</h1>
+                <p><a
+                        href="https://www.google.com/maps?client=firefox-b-d&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KZWKjhwFjSUNMaPx4aQhti-L&daddr=Serman,+36378,+Pontevedra">El
+                        Jardín de los Helechos</a></p>
+                <p>Serman, 36378, Pontevedra</p>
+                <p>664 63 75 66</p>
+                <button class="btn-elegant ">Ver en Mapa</button>
+
+            </div>
+            <!-- <div>
+                <object
+                    data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.2247594203905!2d-8.803852823349342!3d42.08776227121958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd258d051c8e8a95%3A0x8b2fb621a4e1f1a3!2sEl%20Jard%C3%ADn%20de%20los%20Helechos!5e1!3m2!1ses!2ses!4v1745190601958!5m2!1ses!2ses"
+                    type="" width="90%" height="480px" data-aos="zoom-in"></object>
+            </div> -->
+        </section>
+        <!-- <section id="rsvp">
+            <h1>RSVP</h1>
+        </section> -->
+    </div>
+    <footer>
+        &copy; 2025 Lizul y Zoe | Hecho con ❤️ por <a href="https://github.com/aaronduranwebdev">Aarón</a>
+    </footer>
+    <div id="scrollTopBtn"><img src="./assets/img/scrollTop.png" width="48px" height="48px"></div>
+
+    <script src="./js/main.js"></script>
+    <script>
+        AOS.init();
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 1,
+            focusAt: 'center'
+        }).mount();
+
+    </script>
+</body>
+
+</html>
