@@ -215,7 +215,7 @@ updateDebugInfo();
 
 window.addEventListener('resize', () => {
     moveTimerToHero();
-    // updateDebugInfo();
+    updateDebugInfo();
 });
 
 document.querySelector('.scroll-down-btn').addEventListener('click', () => {
