@@ -218,9 +218,6 @@ window.addEventListener('resize', () => {
     updateDebugInfo();
 });
 
-// Actualizar al redimensionar
-// window.addEventListener('resize', updateDebugInfo);
-
 document.querySelector('.scroll-down-btn').addEventListener('click', () => {
     document.querySelector('#horario').scrollIntoView({
         behavior: 'smooth'
