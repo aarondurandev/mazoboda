@@ -3,12 +3,6 @@
 /* ==================== */
 
 @font-face {
-    font-family: 'CormorantGaramond';
-    src: url('../fonts/CormorantGaramond-Light.woff2') format('woff2');
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'PlayfairDisplay';
     src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
@@ -173,13 +167,13 @@ section p {
     gap: 1rem;
 }
 
-.bloque-info {
+/*.bloque-info {
     padding: 2rem 4rem;
     background-color: #a1b8cc;
     color: #30404d;
     text-align: center;
     line-height: 2rem;
-}
+}*/
 
 /* ==================== */
 /* SECCIÓN INICIO  */
@@ -203,7 +197,7 @@ section p {
 #temporizador {
     font-family: 'Futura';
     font-size: 2.2rem !important;
-
+    margin-bottom: 3rem;
 }
 
 /* ==================== */

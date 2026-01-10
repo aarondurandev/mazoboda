@@ -4,7 +4,7 @@ const fecha = document.getElementById('fecha');
 const countdownElement = document.getElementById("temporizador");
 const buttons = document.querySelectorAll('.menu-btn');
 const sections = document.querySelectorAll('.content > section, #hero');
-const viewMoreBtn = document.querySelector('.view-more');
+const viewMoreBtn = document.querySelector('.scroll-down-btn');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const inicioSection = document.getElementById('inicio');
@@ -50,7 +50,13 @@ const updateActiveButton = (targetId) => {
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const target = document.getElementById(button.dataset.target);
+
         if (target) {
+            if (target.id === "hero") {
+                document.querySelector(".wrapper").scrollIntoView({ behavior: 'smooth', block: 'start' })
+                updateActiveButton(button.dataset.target);
+                return;
+            }
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             updateActiveButton(button.dataset.target);
         }
@@ -125,12 +131,6 @@ updateDebugInfo();
 
 window.addEventListener('resize', () => {
     updateDebugInfo();
-});
-
-document.querySelector('.scroll-down-btn').addEventListener('click', () => {
-    document.querySelector('#horario').scrollIntoView({
-        behavior: 'smooth'
-    });
 });
 
 document.querySelectorAll(".button").forEach(button => {
