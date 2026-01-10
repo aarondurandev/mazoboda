@@ -1,121 +1,157 @@
+// 🎯 Variables generales
 const targetDate = new Date("2026-08-08T00:00:00").getTime();
-const countdownElement = document.querySelector("#inicio .temporizador");
+const fecha = document.getElementById('fecha');
+const countdownElement = document.getElementById("temporizador");
+const buttons = document.querySelectorAll('.menu-btn');
+const sections = document.querySelectorAll('.content > section, #hero');
+const viewMoreBtn = document.querySelector('.view-more');
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const inicioSection = document.getElementById('inicio');
 
-function calcularCuentaAtras() {
-    const now = new Date().getTime();
+let observer;
+let heroTimer = null;
+
+
+let lastSecond = null;
+
+function updateCountdown(timestamp) {
+    const now = Date.now();
     const distance = targetDate - now;
 
     if (distance <= 0) {
-        clearInterval(interval);
-        countdownElement.innerHTML = "¡Hoy es el día!";
-        return;
+        countdownElement.textContent = "¡Hoy es el día!";
+        return; // No más actualizaciones
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const currentSecond = Math.floor(now / 1000);
+    if (currentSecond !== lastSecond) {
+        lastSecond = currentSecond;
 
-    countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        const days = Math.floor(distance / 86400000);
+        const hours = Math.floor((distance % 86400000) / 3600000);
+        const minutes = Math.floor((distance % 3600000) / 60000);
+        const seconds = Math.floor((distance % 60000) / 1000);
+
+        countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    requestAnimationFrame(updateCountdown);
 }
-const interval = setInterval(calcularCuentaAtras, 1000);
+requestAnimationFrame(updateCountdown);
 
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
-
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-});
-navMenu.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('show')) {
-        navMenu.classList.toggle('show');
-    }
-})
-const scrollBtn = document.getElementById("scrollTopBtn");
-
-window.onscroll = () => {
-    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+// 🎯 Botones de menú
+const updateActiveButton = (targetId) => {
+    buttons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.target === targetId);
+    });
 };
 
-scrollBtn.onclick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-calcularCuentaAtras();
-
-/*const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
-            observer.unobserve(entry.target)
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const target = document.getElementById(button.dataset.target);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            updateActiveButton(button.dataset.target);
         }
     });
-}, {
-    threshold: 0.2,
-    rootMargin: '0px 0px -10% 0px'
-})
-document.querySelectorAll('[data-animate="true"]').forEach(el => {
-    observer.observe(el)
-});*/
-
-/*const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Only animate once
-      }
-    });
-  }, {
-    threshold: 0.2,
-    rootMargin: '0px 0px -10% 0px'
-  });
-  
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    observer.observe(el);
-  });
-*/
-
-
-/*const modal = document.getElementById('modal');
-const modalImg = document.getElementById('modal-img');
-const closeBtn = document.querySelector('.modal-close');
-
-document.querySelectorAll('.gallery-item').forEach(img => {
-  img.addEventListener('click', () => {
-    modal.classList.remove('hidden');
-    modalImg.src = img.src;
-  });
 });
 
-closeBtn.addEventListener('click', () => {
-  modal.classList.add('hidden');
+function initObserver() {
+    // Si ya había uno, desconectar antes de crear uno nuevo
+    if (observer) observer.disconnect();
+
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            // TODO: si la navegación está abierta, no cambiar color
+            /*if (id === 'hero') {
+                if (entry.isIntersecting) {
+                    hamburger.style.backgroundColor = 'white';
+                    hamburger.style.color = '#333';
+                } else {
+                    // hamburger.style.backgroundColor = '#555';
+                    // hamburger.style.color = 'white';
+                }
+            }*/
+            if (entry.isIntersecting) {
+                updateActiveButton(id);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.4
+    });
+
+    // Volver a observar las secciones actuales
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
+initObserver();
+
+// 🎯 Botón "ver más"
+viewMoreBtn?.addEventListener('click', () => {
+    document.getElementById('horario')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.classList.add('hidden');
-  }
-});*/
-const tabLinks = document.querySelectorAll(".tab-link");
-const tabPanels = document.querySelectorAll(".tab-panel");
+// 🎯 Menú hamburguesa
+hamburger?.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    if (navMenu.classList.contains('active')) {
+        hamburger.style.fontSize = '1.2rem';
+    } else {
+        hamburger.style.fontSize = '1.5rem';
+    }
+});
 
-function handleTabClick(e) {
-  const target = e.currentTarget.dataset.tab;
-  const isMobile = window.innerWidth <= 768;
+navMenu?.addEventListener('click', () => {
+    if (navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        hamburger.style.fontSize = '1.5rem';
+    }
+});
 
-  tabLinks.forEach(btn => btn.classList.remove("active"));
-  e.currentTarget.classList.add("active");
 
-  if (!isMobile) {
-    tabPanels.forEach(panel => {
-      panel.classList.remove("active");
-      if (panel.id === target) panel.classList.add("active");
-    });
-  } else {
-    const panel = document.getElementById(target);
-    const isOpen = e.currentTarget.classList.contains("active");
-    panel.classList.toggle("active", !isOpen);
-  }
+function updateDebugInfo() {
+    const info = `
+        Viewport: ${window.innerWidth} x ${window.innerHeight}<br>Pixel Ratio: ${window.devicePixelRatio}
+    `;
+    document.getElementById('debug-info').innerHTML = info;
 }
 
-tabLinks.forEach(btn => btn.addEventListener("click", handleTabClick));
+// Inicializar
+updateDebugInfo();
+
+window.addEventListener('resize', () => {
+    updateDebugInfo();
+});
+
+document.querySelector('.scroll-down-btn').addEventListener('click', () => {
+    document.querySelector('#horario').scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
+document.querySelectorAll(".button").forEach(button => {
+    button.addEventListener('click', event => {
+        switch (button.id) {
+            case 'verUbicacion':
+                open("https://maps.app.goo.gl/wiTzGSZzjJq1Q4Ub9");
+                break;
+            case 'verTransporte':
+                open("https://www.rome2rio.com/es/map/Vigo/El-Jard%C3%ADn-de-los-Helechos-Serman-Gondomar-Espa%C3%B1a");
+                break;
+        }
+    });
+})
+
+// Detectar orientación
+window.matchMedia("(orientation: landscape)").addEventListener("change", e => {
+    const landscape = e.matches;
+    if (landscape) {
+
+    } else {
+
+    }
+});

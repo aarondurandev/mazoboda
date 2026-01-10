@@ -5,10 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bodorrio</title>
-    <link rel="stylesheet" href="./css/stylesv2.css">
-    <!-- Precarga fondo hero -->
-    <link rel="preload" as="image" href="./assets/img/Imagen de WhatsApp 2025-04-27 a las 19.32.03_a4917038.jpg"
-        type="image/webp">
+    <link rel="stylesheet" href="./css/styles.css">
     <!-- Precarga fuentes -->
     <link rel="preload" href="./fonts/CormorantGaramond-Light.woff2" as="font" type="font/woff2"
         crossorigin="anonymous">
@@ -20,12 +17,6 @@
 
 
     <link rel="stylesheet" href="./css/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.7.1/dist/css/glide.core.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.7.1/dist/glide.min.js"></script>
-
     <script src="./js/aos.js"></script>
 
 </head>
@@ -43,26 +34,19 @@
         <div class="content">
             <div class="hamburger" id="hamburger">&#9776;</div>
             <nav class="nav-menu">
-                <button class="menu-btn active" data-target="inicio">Inicio</button>
+                <!-- <button class="menu-btn active" data-target="inicio">Inicio</button> -->
                 <button class="menu-btn" data-target="hero">Inicio</button>
-                <button class="menu-btn" data-target="nosotros">Nosotros</button>
                 <button class="menu-btn" data-target="horario">Horario</button>
                 <button class="menu-btn" data-target="galeria">Galería</button>
+                <button class="menu-btn" data-target="nosotros">Nosotros</button>
                 <button class="menu-btn" data-target="faq">Preguntas Frecuentes</button>
+                <button class="menu-btn" data-target="rsvp">RSVP</button>
+
             </nav>
-
-            <!--<section id="inicio">
-                <p id="fecha">8 agosto 2026</p>
-                <p id="temporizador"></p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" role="img" class="view-more" viewBox="0 0 24 24" fill="none">
-                    <path d="m6 9 6 6 6-6"></path>
-                </svg>
-            </section>-->
 
             <section id="horario" data-aos="fade-in">
                 <h2>Horario</h2>
-                <h4>(aproximado)</h4>
+                <h4>Las horas indicadas son aproximadas</h4>
                 <div class="section-contenido">
                     <h3>Ceremonia</h3>
                     <p>13:30</p>
@@ -91,6 +75,18 @@
 
             </section>
 
+            <section id="nosotros" data-aos="fade-in">
+                <h2>Nosotros</h2>
+                <div class="section-contenido">
+                    <div class="masonry">
+                        <img src="./assets/img/61920405_345499372815890_6266878267100520457_n.jpg" alt="Foto 1">
+                        <img src="./assets/img/355368958_1346483356226488_8183292768035538372_n.jpg" alt="Foto 2">
+                        <img src="./assets/img/IMG-20230513-WA0008.webp" alt="Foto 3">
+                        <img src="./assets/img/IMG20240813131427 - copia.webp" alt="Foto 4">
+                    </div>
+                </div>
+                <div class="deco-flor"></div>
+            </section>
             <section id="faq">
                 <h2>Preguntas Frecuentes</h2>
                 <div class="section-contenido">
@@ -124,26 +120,12 @@
                 </div>
                 <div class="deco-flor"></div>
             </section>
-
-            <section id="nosotros" data-aos="fade-in">
-                <h2>Nosotros</h2>
-                <div class="section-contenido">
-                    <div class="masonry">
-                        <img src="./assets/img/61920405_345499372815890_6266878267100520457_n.jpg" alt="Foto 1">
-                        <img src="./assets/img/355368958_1346483356226488_8183292768035538372_n.jpg" alt="Foto 2">
-                        <img src="./assets/img/IMG-20230513-WA0008.webp" alt="Foto 3">
-                        <img src="./assets/img/IMG20240813131427 - copia.webp" alt="Foto 4">
-                    </div>
-                </div>
-                <div class="deco-flor"></div>
-            </section>
-
             <section id="rsvp" data-aos="fade-in">
                 <h2>Cuestionario de asistencia</h2>
                 <div class="section-contenido">
                     <iframe
                         src="https://docs.google.com/forms/d/e/1FAIpQLSf3y2I2MVfQzvHPHgLZ5HuApURPoN6ph0c1n3VdBprmHShoKA/viewform?embedded=true"
-                        width="640" height="759" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+                        frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
                 </div>
                 <div class="deco-flor"></div>
 
@@ -158,16 +140,10 @@
             </div>
         </div>
     </div>
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-        <button class="prev">&lt;</button>
-        <img src="" alt="Imagen ampliada" id="lightbox-img">
-        <button class="next">&gt;</button>
-    </div>
     <script>
         AOS.init();
     </script>
-    <script src="./js/mainv2.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
