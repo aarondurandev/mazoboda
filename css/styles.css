@@ -131,7 +131,11 @@ button:hover {
     width: 100%;
     font-family: 'LibreBaskerville';
     /* background-color: var(--color-fondo); */
-    background-image:  url('../assets/img/fondo_de_detras_de_los_pollos.png');
+    /* background-image:  url('../assets/img/fondo_de_detras_de_los_pollos.png'); */
+    background-image: url('../assets/img/fondo_content.webp');
+    background-size: contain;
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center;*/
 }
 
 
@@ -167,18 +171,10 @@ section p {
     gap: 1rem;
 }
 
-/*.bloque-info {
-    padding: 2rem 4rem;
-    background-color: #a1b8cc;
-    color: #30404d;
-    text-align: center;
-    line-height: 2rem;
-}*/
-
 /* ==================== */
 /* SECCIÓN INICIO  */
 /* ==================== */
-#inicio {
+/*#inicio {
     justify-content: center;
     align-items: center;
     min-height: 100svh;
@@ -191,8 +187,7 @@ section p {
 
 #inicio p:first-of-type {
     margin-top: -6rem;
-    /* color: var(--color-primario); */
-}
+}*/
 
 #temporizador {
     font-family: 'Futura';
@@ -228,6 +223,15 @@ section p {
 .pregunta h4 {
     font-weight: bold;
     margin-bottom: 0.7rem;
+}
+
+/*
+    GFORM
+*/
+
+.google-form {
+    min-height: 50svh;
+    background-color: white;
 }
 
 /* ==================== */
@@ -308,7 +312,12 @@ footer {
     padding: 1rem;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
 }
-
+/* ==================== */
+/* AVISO DE COOKIES */
+/* ==================== */
+#avisoCookies {
+    
+}
 /* ==================== */
 /* ELEMENTOS DECORATIVOS */
 /* ==================== */
@@ -375,11 +384,11 @@ footer {
     }
     /* TODO: revisar esto */
     
-    /*#hero {
-        position: relative;
+    #hero {
+        /*position: relative;*/
         height: 100svh;
-        z-index: 1;
-    }*/
+        /*z-index: 1;*/
+    }
 
     .content {
         position: relative;
