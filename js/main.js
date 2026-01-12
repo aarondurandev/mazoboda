@@ -146,6 +146,14 @@ document.querySelectorAll(".button").forEach(button => {
     });
 })
 
+// Aviso cookies
+document.getElementById("aceptarCookies").addEventListener('click', () => {
+    document.getElementById("avisoCookies").style.display = "none";
+    localStorage.setItem("cookiesAceptadas", "true");
+});
+if (localStorage.getItem("cookiesAceptadas") === "true") {
+    document.getElementById("avisoCookies").style.display = "none";
+}
 // Detectar orientación
 window.matchMedia("(orientation: landscape)").addEventListener("change", e => {
     const landscape = e.matches;

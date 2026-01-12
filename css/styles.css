@@ -247,6 +247,7 @@ section p {
 .google-form {
     min-height: 50svh;
     background-color: white;
+    border-radius: 10px;
 }
 
 /* ==================== */
@@ -331,7 +332,32 @@ footer {
 /* ==================== */
 /* AVISO DE COOKIES */
 /* ==================== */
-#avisoCookies {}
+#avisoCookies {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--verde-salvia)
+
+}
+
+#avisoCookies p {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.btn-aceptar-cookies {
+    background-color: white;
+    padding: 3px 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    
+}
 
 /* ==================== */
 /* ELEMENTOS DECORATIVOS */
@@ -342,7 +368,6 @@ footer {
 }
 
 .deco-flor::before {
-    /* background-image: url('../assets/img/logo.jpg'); */
     background-image: url('../assets/img/pollos1500_lol_sin_fondo.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -357,6 +382,8 @@ footer {
     width: 100%;
     height: 1px;
     background-color: #999;
+    margin: 0 auto;
+    width: 60%;
 }
 
 .divisor-corto {
