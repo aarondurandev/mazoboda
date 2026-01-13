@@ -1,6 +1,8 @@
 export async function onRequestPost({ request, env }) {
     console.log("RSVP received")
-    const data = await request.json();
+    console.log(request);
+    
+    /*const data = await request.json();
     console.log(data);
     
     if (!data.name || !data.attending) {
@@ -16,5 +18,5 @@ export async function onRequestPost({ request, env }) {
         timestamp: Date.now()
     }));
 
-    return new Response("RSVP received!", { status: 200 });
+    return new Response("RSVP received!", { status: 200 });*/
 }
