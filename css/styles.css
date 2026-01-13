@@ -245,6 +245,7 @@ section p {
 */
 
 .google-form {
+    display: none;
     min-height: 50svh;
     background-color: white;
     border-radius: 10px;
@@ -333,22 +334,24 @@ footer {
 /* AVISO DE COOKIES */
 /* ==================== */
 #avisoCookies {
-    position: fixed;
+    /*position: fixed;
     bottom: 0;
-    left: 0;
+    left: 0;*/
     width: 100%;
     padding: 1rem;
     text-align: center;
-    background-color: var(--verde-salvia)
-
+    background-color: var(--verde-salvia);
+    border-top: 1px solid var(--arena-suave);
 }
 
 #avisoCookies p {
     margin: 0;
     display: inline-block;
     vertical-align: middle;
+    font-family: 'PlayfairDisplay';
+
     font-size: 0.8rem;
-    color: white;
+    color: var(--color-texto);
 }
 
 .btn-aceptar-cookies {
@@ -356,7 +359,6 @@ footer {
     padding: 3px 5px;
     cursor: pointer;
     font-size: 0.8rem;
-    
 }
 
 /* ==================== */

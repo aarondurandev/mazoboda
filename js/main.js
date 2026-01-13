@@ -150,9 +150,23 @@ document.querySelectorAll(".button").forEach(button => {
 document.getElementById("aceptarCookies").addEventListener('click', () => {
     document.getElementById("avisoCookies").style.display = "none";
     localStorage.setItem("cookiesAceptadas", "true");
+    cargarFormularioGoogle();
 });
+document.getElementById("revocarConsentimiento").addEventListener('click', () => {
+    localStorage.removeItem("cookiesAceptadas");
+})
 if (localStorage.getItem("cookiesAceptadas") === "true") {
     document.getElementById("avisoCookies").style.display = "none";
+    cargarFormularioGoogle()
+
+}
+function cargarFormularioGoogle() {
+    const iframeForm = document.createElement('iframe');
+    iframeForm.src = "https://docs.google.com/forms/d/e/1FAIpQLSf3y2I2MVfQzvHPHgLZ5HuApURPoN6ph0c1n3VdBprmHShoKA/viewform?embedded=true";
+    iframeForm.frameBorder = 0;
+    iframeForm.className = "google-form";
+    document.querySelector("#rsvp .section-contenido").appendChild(iframeForm);
+    document.querySelector(".google-form").style.display = "block";
 }
 // Detectar orientación
 window.matchMedia("(orientation: landscape)").addEventListener("change", e => {
