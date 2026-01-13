@@ -16,7 +16,7 @@ export async function onRequestPost({ request, env }) {
         attending: data.attending,
         message: data.message || "",
         timestamp: Date.now()
-    }));
+    }));*/
 
-    return new Response("RSVP received!", { status: 200 });*/
+    return new Response(request, { status: 200 });
 }
