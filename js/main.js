@@ -148,7 +148,6 @@ document.querySelectorAll(".button").forEach(button => {
 
 // Aviso cookies
 document.getElementById("aceptarCookies").addEventListener('click', () => {
-    document.getElementById("avisoCookies").style.display = "none";
     localStorage.setItem("cookiesAceptadas", "true");
     cargarFormularioGoogle();
 });
@@ -156,17 +155,19 @@ document.getElementById("revocarConsentimiento").addEventListener('click', () =>
     localStorage.removeItem("cookiesAceptadas");
 })
 if (localStorage.getItem("cookiesAceptadas") === "true") {
-    document.getElementById("avisoCookies").style.display = "none";
     cargarFormularioGoogle()
-
 }
 function cargarFormularioGoogle() {
+    document.getElementById("avisoCookies").style.display = "none";
+
     const iframeForm = document.createElement('iframe');
     iframeForm.src = "https://docs.google.com/forms/d/e/1FAIpQLSf3y2I2MVfQzvHPHgLZ5HuApURPoN6ph0c1n3VdBprmHShoKA/viewform?embedded=true";
     iframeForm.frameBorder = 0;
-    iframeForm.className = "google-form";
+    iframeForm.id = "googleForm";
     document.querySelector("#rsvp .section-contenido").appendChild(iframeForm);
-    document.querySelector(".google-form").style.display = "block";
+    document.querySelector("#googleForm").style.display = "block";
+    document.getElementById("revocarConsentimiento").style.display = "block";
+
 }
 // Detectar orientación
 window.matchMedia("(orientation: landscape)").addEventListener("change", e => {
