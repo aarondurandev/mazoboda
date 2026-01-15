@@ -121,6 +121,10 @@ button:hover {
   align-items: end;
 }
 
+#horario h4 {
+  margin-top: -2rem;
+}
+
 /* ==================== */
 /* MAIN CONTENT */
 /* ==================== */
@@ -297,11 +301,9 @@ footer {
   gap: 1rem;
   justify-content: center;
   min-height: 25svh;
-  width: 100%;
   padding: 1rem;
   text-align: center;
   background-color: rgba(156, 175, 136, 0.6);
-  border-top: 1px solid var(--arena-suave);
 }
 
 #avisoCookies p {
@@ -314,12 +316,11 @@ footer {
 }
 
 .btn-aceptar-cookies {
-  background-color: white;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 0.8rem;
+  background-color: var(--color-fondo);
 }
-
+.btn-aceptar-cookies:hover{
+  background-color: var(--arena-suave);
+}
 #revocarConsentimiento {
   display: none;
 }
@@ -355,13 +356,6 @@ footer {
 
 .divider {
   width: 60%;
-  height: 1px;
-  background-color: #999;
-  margin: 0 auto;
-}
-
-.divisor-corto {
-  width: 40%;
   height: 1px;
   background-color: #999;
   margin: 0 auto;
@@ -494,11 +488,11 @@ footer {
     0% {
       transform: rotate(180deg) scale(1) translateY(0);
     }
-    
+
     50% {
       transform: rotate(180deg) scale(1.4) translateY(25px);
     }
-    
+
     100% {
       transform: rotate(180deg) scale(1) translateY(0);
     }
