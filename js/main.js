@@ -111,10 +111,10 @@ function updateDebugInfo() {
 }
 
 // Inicializar
-updateDebugInfo();
+// updateDebugInfo();
 
 window.addEventListener('resize', () => {
-    updateDebugInfo();
+    // updateDebugInfo();
 
 });
 
@@ -126,6 +126,9 @@ document.querySelectorAll("button").forEach(button => {
                 break;
             case 'verTransporte':
                 open("https://www.rome2rio.com/es/map/Vigo/El-Jard%C3%ADn-de-los-Helechos-Serman-Gondomar-Espa%C3%B1a");
+                break;
+            case 'verAlbum':
+                open("https://photos.app.goo.gl/BQBjwgaZSzjsT7379");
                 break;
             case 'aceptarCookies':
                 localStorage.setItem("cookiesAceptadas", "true");

@@ -319,7 +319,8 @@ footer {
   background-color: var(--color-fondo);
 }
 .btn-aceptar-cookies:hover{
-  background-color: var(--arena-suave);
+  background-color: #748d5b;
+  color: white;
 }
 #revocarConsentimiento {
   display: none;
