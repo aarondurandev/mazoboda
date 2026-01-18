@@ -103,12 +103,12 @@ navMenu?.addEventListener('click', () => {
 });
 
 
-function updateDebugInfo() {
+/*function updateDebugInfo() {
     const info = `
         Viewport: ${window.innerWidth} x ${window.innerHeight}<br>Pixel Ratio: ${window.devicePixelRatio}
     `;
     document.getElementById('debug-info').innerHTML = info;
-}
+}*/
 
 // Inicializar
 // updateDebugInfo();
