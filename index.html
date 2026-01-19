@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow">
     <title>Bodorrio</title>
     <link rel="stylesheet" href="./css/styles.css">
     <!-- <link rel="stylesheet" href="./css/aos.css" /> -->
@@ -14,10 +15,6 @@
 </head>
 
 <body>
-<!--     <div id="debug-info"
-        style="position:fixed;bottom:10px;left:10px;background:rgba(0,0,0,0.7);color:white;padding:10px;border-radius:8px;font-size:11px;z-index:9999;font-family:sans-serif;">
-    </div> -->
-
     <div class="wrapper">
         <div id="hero">
             <p id="temporizador"></p>
@@ -26,8 +23,7 @@
         <div class="content">
             <div class="hamburger" id="hamburger">&#9776;</div>
             <nav class="nav-menu">
-                <!-- <button class="menu-btn active" data-target="inicio">Inicio</button> -->
-                <button class="menu-btn" data-target="hero">Inicio</button>
+                <button class="menu-btn active" data-target="hero">Inicio</button>
                 <button class="menu-btn" data-target="horario">Horario</button>
                 <button class="menu-btn" data-target="galeria">Galería</button>
                 <button class="menu-btn" data-target="nosotros">Nosotros</button>
@@ -57,7 +53,8 @@
             <section id="galeria" data-aos="fade-in">
                 <h2>Galería</h2>
                 <div class="section-contenido">
-                    <p>Aunque habrá un fotógrafo, nos gustaría que también nos ayudaras a capturar este día, por lo que puedes compartir tus fotos aquí.</p>
+                    <p>Aunque habrá un fotógrafo, nos gustaría que también nos ayudaras a capturar este día, por lo que
+                        puedes compartir tus fotos aquí.</p>
                     <button id="verAlbum">Ir al álbum</button>
                 </div>
                 <div class="deco-flor"></div>
@@ -67,25 +64,29 @@
                 <h2>Nosotros</h2>
                 <div class="section-contenido">
                     <div class="masonry">
-                        <div class="img-wrap">
-                            <img src="./assets/img/7061.webp" alt="Foto 1">
-                        </div>
+
                         <div class="img-wrap" data-ratio="square">
                             <img src="./assets/img/355368958_1346483356226488_8183292768035538372_n.jpg" alt="Foto 2">
                         </div>
+
                         <div class="img-wrap" data-ratio="landscape">
                             <img src="./assets/img/IMG-20230513-WA0008.webp" alt="Foto 3">
+                        </div>
+
+                        <div class="img-wrap">
+                            <img src="./assets/img/465917192_9051573838186975_8870359446942124927_n.webp" alt="Foto 5">
+
+                            <div class="img-wrap" data-ratio="square">
+                                <img src="./assets/img/IMG-20230624-WA0011.jpg" alt="Foto 6">
+                            </div>
                         </div>
                         <div class="img-wrap">
                             <img src="./assets/img/IMG20240813131427 - copia.webp" alt="Foto 4">
                         </div>
                         <div class="img-wrap">
-                            <img src="./assets/img/465917192_9051573838186975_8870359446942124927_n.webp" alt="Foto 5">
+                            <img src="./assets/img/7061.jpg" alt="Foto 1">
                         </div>
-                        <div class="img-wrap" data-ratio="square">
-                            <img src="./assets/img/IMG-20230624-WA0011.webp" alt="Foto 6">
-                        </div>
-                        <div class="img-wrap" data-ratio="landscape">
+                        <div class="img-wrap" data-ratio="portrait">
                             <img src="./assets/img/IMG-20240406-WA0050 - copia.webp" alt="Foto 7">
                         </div>
                     </div>
@@ -108,7 +109,8 @@
 
                     <div class="pregunta">
                         <h4>¿Hay menú vegetariano o con opciones especiales?</h4>
-                        <p>Por supuesto, indícanoslo en el formulario que hay más abajo para que podamos comunicárselo al catering.</p>
+                        <p>Por supuesto, indícanoslo en el formulario que hay más abajo para que podamos comunicárselo
+                            al catering.</p>
                     </div>
                     <div class="divider"></div>
 
