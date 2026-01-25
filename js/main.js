@@ -156,13 +156,14 @@ document.querySelectorAll("button").forEach(button => {
                 localStorage.setItem("cookiesAceptadas", "true");
                 cargarFormularioGoogle();
                 break;
-            case 'revocarConsentimiento':
-                localStorage.removeItem("cookiesAceptadas");
-                break;
         }
     });
 })
 
+document.getElementById("revocarConsentimiento").addEventListener('click', () => {
+    localStorage.removeItem("cookiesAceptadas");
+    window.location.reload();
+})
 if (localStorage.getItem("cookiesAceptadas") === "true") {
     cargarFormularioGoogle()
 }

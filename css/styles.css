@@ -318,12 +318,17 @@ footer {
 .btn-aceptar-cookies {
   background-color: var(--color-fondo);
 }
-.btn-aceptar-cookies:hover{
+
+.btn-aceptar-cookies:hover {
   background-color: #748d5b;
   color: white;
 }
+
 #revocarConsentimiento {
   display: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
 }
 
 /* ==================== */
