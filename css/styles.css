@@ -350,7 +350,7 @@ footer {
 }
 
 .deco-flor::before {
-  background-image: url('../assets/img/pollos1500_lol_sin_fondo.png');
+  background-image: url('../assets/img/pollos1500_lol_sin_fondo.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
