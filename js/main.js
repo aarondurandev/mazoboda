@@ -1,5 +1,5 @@
 // 🎯 Variables generales
-const targetDate = new Date("2026-08-08T00:00:00").getTime();
+const targetDate = new Date(2026, 7, 8, 0, 0, 0).getTime();
 const countdownElement = document.getElementById("temporizador");
 const buttons = document.querySelectorAll('.menu-btn');
 const content = document.querySelector(".content");
