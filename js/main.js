@@ -1,16 +1,11 @@
-// 🎯 Variables generales
 const targetDate = new Date(2026, 7, 8, 0, 0, 0).getTime();
 const countdownElement = document.getElementById("temporizador");
 const buttons = document.querySelectorAll('.menu-btn');
-const content = document.querySelector(".content");
 const sections = Array.from(document.querySelectorAll('.content > section'));
 const viewMoreBtn = document.querySelector('.scroll-down-btn');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.querySelector('.nav-menu');
 let ticking = false;
-
-// let observer;
-let heroTimer = null;
 
 
 let lastSecond = null;
@@ -63,19 +58,17 @@ buttons.forEach(button => {
 });
 
 
-function getCurrentSection() {
+function getActualSection() {
     const isMobile = window.innerWidth <= 1024;
     const scrollY = window.scrollY;
     const viewportHeight = window.innerHeight;
 
     let current = sections[0].id;
 
-    // Only consider hero if on mobile
     if (isMobile) {
         if (scrollY < 50) return 'hero';
     }
 
-    // Check all sections
     const viewportCenter = scrollY + viewportHeight / 2;
 
     for (let section of sections) {
@@ -98,7 +91,7 @@ function requestTick() {
 }
 
 function updateScroll() {
-    const currentSection = getCurrentSection();
+    const currentSection = getActualSection();
     updateActiveButton(currentSection);
     ticking = false;
 }
@@ -115,7 +108,7 @@ function initScrollHandler() {
     window.removeEventListener('resize', onResize);
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onResize, { passive: true });
-    updateActiveButton(getCurrentSection());
+    updateActiveButton(getActualSection());
 }
 
 initScrollHandler();
@@ -154,7 +147,7 @@ document.querySelectorAll("button").forEach(button => {
                 break;
             case 'aceptarCookies':
                 localStorage.setItem("cookiesAceptadas", "true");
-                cargarFormularioGoogle();
+                loadGoogleForm();
                 break;
         }
     });
@@ -164,10 +157,12 @@ document.getElementById("revocarConsentimiento").addEventListener('click', () =>
     localStorage.removeItem("cookiesAceptadas");
     window.location.reload();
 })
+
 if (localStorage.getItem("cookiesAceptadas") === "true") {
-    cargarFormularioGoogle()
+    loadGoogleForm()
 }
-function cargarFormularioGoogle() {
+
+function loadGoogleForm() {
     document.getElementById("avisoCookies").style.display = "none";
 
     const iframeForm = document.createElement('iframe');
@@ -177,14 +172,4 @@ function cargarFormularioGoogle() {
     document.querySelector("#rsvp .section-contenido").appendChild(iframeForm);
     document.querySelector("#googleForm").style.display = "block";
     document.getElementById("revocarConsentimiento").style.display = "block";
-
 }
-// Detectar orientación
-window.matchMedia("(orientation: landscape)").addEventListener("change", e => {
-    const landscape = e.matches;
-    if (landscape) {
-
-    } else {
-
-    }
-});
