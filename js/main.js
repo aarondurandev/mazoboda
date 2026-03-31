@@ -119,11 +119,10 @@ viewMoreBtn?.addEventListener('click', () => {
 
 hamburger?.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    if (navMenu.classList.contains('active')) {
-        hamburger.style.fontSize = '1.2rem';
-    } else {
-        hamburger.style.fontSize = '1.5rem';
-    }
+    const isOpen = navMenu.classList.contains('active');
+    hamburger.style.fontSize = isOpen ? '1.2rem' : '1.5rem';
+    hamburger.setAttribute('aria-expanded', isOpen);
+    hamburger.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
 });
 
 navMenu?.addEventListener('click', () => {
@@ -132,6 +131,17 @@ navMenu?.addEventListener('click', () => {
         hamburger.style.fontSize = '1.5rem';
     }
 });
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            sectionObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+sections.forEach(section => sectionObserver.observe(section));
 
 document.querySelectorAll("button").forEach(button => {
     button.addEventListener('click', event => {

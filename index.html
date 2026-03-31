@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -10,9 +10,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>MaZo Boda - 8/8/2026</title>
+    <meta property="og:title" content="MaZo Boda - 8 de agosto de 2026">
+    <meta property="og:description" content="¡Estáis invitados! Consulta el horario, la ubicación y confirma tu asistencia.">
+    <meta property="og:image" content="https://mazoboda.com/assets/img/hero.jpeg">
+    <meta property="og:url" content="https://mazoboda.com">
+    <meta property="og:type" content="website">
+    <link rel="preload" href="./fonts/LibreBaskerville-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/FuturaStd-Medium-bdda1a9e.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/RougeScript-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 
 <body>
@@ -22,8 +28,8 @@
         </div>
 
         <div class="content">
-            <div class="hamburger" id="hamburger">&#9776;</div>
-            <nav class="nav-menu">
+            <div class="hamburger" id="hamburger" role="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu" tabindex="0">&#9776;</div>
+            <nav class="nav-menu" id="nav-menu">
                 <button class="menu-btn active" data-target="hero">Inicio</button>
                 <button class="menu-btn" data-target="horario">Horario</button>
                 <button class="menu-btn" data-target="galeria">Galería</button>
@@ -32,7 +38,7 @@
                 <button class="menu-btn" data-target="rsvp">RSVP</button>
             </nav>
 
-            <section id="horario" data-aos="fade-in">
+            <section id="horario">
                 <h2>Horario</h2>
                 <h4><i>(Las horas indicadas son aproximadas)</i></h4>
                 <div class="section-contenido">
@@ -51,7 +57,7 @@
 
             </section>
 
-            <section id="galeria" data-aos="fade-in">
+            <section id="galeria">
                 <h2>Galería</h2>
                 <div class="section-contenido">
                     <p>Aunque habrá un fotógrafo, nos gustaría que también nos ayudaras a capturar este día, por lo que
@@ -61,7 +67,7 @@
                 <div class="deco-flor"></div>
             </section>
 
-            <section id="nosotros" data-aos="fade-in">
+            <section id="nosotros">
                 <h2>Nosotros</h2>
                 <div class="section-contenido">
                     <div class="masonry">
@@ -90,7 +96,7 @@
                 </div>
                 <div class="deco-flor"></div>
             </section>
-            <section id="faq" data-aos="fade-in">
+            <section id="faq">
                 <h2>Preguntas Frecuentes</h2>
                 <div class="section-contenido">
                     <div class="pregunta">
@@ -119,7 +125,7 @@
                 </div>
                 <div class="deco-flor"></div>
             </section>
-            <section id="rsvp" data-aos="fade-in">
+            <section id="rsvp">
                 <h2>Cuestionario de asistencia</h2>
                 <div class="section-contenido">
                     <div id="avisoCookies">
@@ -147,9 +153,6 @@
             </div>
         </div>
     </div>
-    <script>
-        AOS.init();
-    </script>
     <script src="./js/main.js"></script>
 </body>
 
